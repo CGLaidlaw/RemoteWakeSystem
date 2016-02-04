@@ -31,11 +31,11 @@ public class MainMenuController {
 	RemoteMain main;
 	Stage stage;
 
-	private void setStage (Stage stage) {
+	public void setStage (Stage stage) {
 		this.stage = stage;
 	}
 
-	private void setMain (RemoteMain main) {
+	public void setMain (RemoteMain main) {
 		this.main = main;
 	}
 
@@ -46,7 +46,7 @@ public class MainMenuController {
 
 	@FXML
 	private void saveNewButton () {
-		System.out.println("Save the new connection");
+		main.SaveMenu ();
 	}
 
 	@FXML
@@ -61,6 +61,6 @@ public class MainMenuController {
 
 	@FXML
 	private void closeButton () {
-		stage.close();
+		System.exit(0);
 	}
 }
