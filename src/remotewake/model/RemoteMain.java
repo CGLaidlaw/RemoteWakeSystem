@@ -1,4 +1,4 @@
-package remotewake.controller;
+package remotewake.model;
 
 public class RemoteMain {
 
