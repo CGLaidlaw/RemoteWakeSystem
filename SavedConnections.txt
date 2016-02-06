@@ -1,0 +1,2 @@
+{"macAddress":"AB:CD:EF:12:34:56","connName":"Test Address"}
+{"macAddress":"12:34:56:AB:CD:EF","connName":"Second Test"}

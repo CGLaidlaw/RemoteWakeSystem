@@ -1,6 +1,7 @@
 package remotewake.model;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import remotewake.controller.FileOperations;
 import remotewake.view.MainMenuController;
 import remotewake.view.SaveConnectionController;
 
@@ -23,6 +25,8 @@ public class RemoteMain extends Application {
 		primaryStage.setTitle("System Remote Wake");
 
 		MainMenu();
+		FileOperations test = new FileOperations();
+		test.readFromFile();
 	}
 
 	public void MainMenu () {
@@ -45,7 +49,7 @@ public class RemoteMain extends Application {
 		}
 	}
 	
-	public void SaveMenu () {
+	public void SaveMenu (String macAddress) {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(RemoteMain.class.getResource("../view/SaveConnection.fxml"));
@@ -62,6 +66,7 @@ public class RemoteMain extends Application {
 			SaveConnectionController controller = loader.getController();
 			controller.setMain(this);
 			controller.setStage(stage);
+			controller.setMAC(macAddress);
 			
 			stage.showAndWait();
 		} catch (IOException e) {
