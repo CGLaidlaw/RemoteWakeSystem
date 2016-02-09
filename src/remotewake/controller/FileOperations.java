@@ -10,10 +10,6 @@ import java.util.ArrayList;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import remotewake.view.MainMenuController;
-
 public class FileOperations {
 
 	private String file = System.getProperty("user.dir");
@@ -34,6 +30,7 @@ public class FileOperations {
 
 	public void readFromFile () {
 		JSONParser parser = new JSONParser();
+		connections.clear();
 
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(new File(fullPath)));

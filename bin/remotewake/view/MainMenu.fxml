@@ -12,7 +12,8 @@
          <children>
             <HBox alignment="CENTER_LEFT" spacing="10.0">
                <children>
-                  <Label text="New Connection:">
+                  <RadioButton fx:id="newConnectionOption" mnemonicParsing="false" selected="true" />
+                  <Label fx:id="newConnLabel" text="New Connection:">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -31,12 +32,13 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" spacing="10.0">
                <children>
-                  <Label text="Saved Connections:">
+                  <RadioButton fx:id="savedConnectionOption" mnemonicParsing="false" />
+                  <Label fx:id="savedConnLabel" opacity="0.2" text="Saved Connections:">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <ChoiceBox fx:id="savedConnections" />
+                  <ChoiceBox fx:id="savedConnections" disable="true" opacity="0.2" />
                </children>
             </HBox>
             <HBox alignment="CENTER" spacing="10.0">
