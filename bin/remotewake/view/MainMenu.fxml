@@ -10,6 +10,20 @@
    <children>
       <VBox alignment="CENTER" spacing="20.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
          <children>
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Label text="Network IP Gateway:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="gatewayIP" promptText="(IP Gateway Address)">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
             <HBox alignment="CENTER_LEFT" spacing="10.0">
                <children>
                   <RadioButton fx:id="newConnectionOption" mnemonicParsing="false" selected="true" />

@@ -15,7 +15,7 @@ import remotewake.view.SaveConnectionController;
 public class RemoteMain extends Application {
 
 	Stage primaryStage;
-	
+
 	public RemoteMain() {}
 
 	@Override
@@ -36,37 +36,37 @@ public class RemoteMain extends Application {
 
 			Scene scene = new Scene(pane);
 			primaryStage.setScene(scene);
-			
+
 			MainMenuController controller = loader.getController();
 			controller.setMain(this);
 			controller.setStage(primaryStage);
-			
+
 			primaryStage.show();
 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void SaveMenu (String macAddress) {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(RemoteMain.class.getResource("../view/SaveConnection.fxml"));
 			AnchorPane pane = (AnchorPane) loader.load();
-			
+
 			Stage stage = new Stage();
 			stage.setTitle("Saving New Connection");
 			stage.initModality(Modality.WINDOW_MODAL);
 			stage.initOwner(primaryStage);
-			
+
 			Scene scene = new Scene(pane);
 			stage.setScene(scene);
-			
+
 			SaveConnectionController controller = loader.getController();
 			controller.setMain(this);
 			controller.setStage(stage);
 			controller.setMAC(macAddress);
-			
+
 			stage.showAndWait();
 		} catch (IOException e) {
 			e.printStackTrace();
